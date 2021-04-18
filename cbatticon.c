@@ -784,7 +784,7 @@ static void update_tray_icon_status (GtkStatusIcon *tray_icon)
         if (ac_only == FALSE) {
             ac_only = TRUE;
 
-            NOTIFY_MESSAGE (&notification, _("AC only, no battery!"), NULL, NOTIFY_EXPIRES_NEVER, NOTIFY_URGENCY_NORMAL);
+            NOTIFY_MESSAGE (&notification, _("AC only, no battery!"), NULL, NOTIFY_EXPIRES_DEFAULT, NOTIFY_URGENCY_NORMAL);
 
             gtk_status_icon_set_tooltip_text (tray_icon, _("AC only, no battery!"));
             gtk_status_icon_set_from_icon_name (tray_icon, "ac-adapter");
@@ -840,7 +840,7 @@ static void update_tray_icon_status (GtkStatusIcon *tray_icon)
 
     switch (battery_status) {
         case MISSING:
-            HANDLE_BATTERY_STATUS (0, -1, NOTIFY_EXPIRES_NEVER, NOTIFY_URGENCY_NORMAL)
+            HANDLE_BATTERY_STATUS (0, -1, NOTIFY_EXPIRES_DEFAULT, NOTIFY_URGENCY_NORMAL)
             break;
 
         case UNKNOWN:
